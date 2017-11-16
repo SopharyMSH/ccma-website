@@ -1,0 +1,28 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'bourbon';
+@import 'helpers/_variable';
+
+@import 'post_types/activity';
+
+@import 'partials/_footer';
+@import 'partials/_navbar';
+@import 'partials/_slider';
+@import 'partials/_certificate';
+@import 'partials/_card';
+@import 'partials/_diagram';
+
+@import 'templates/home';
+@import 'templates/contact_us';
+
+html, body {
+  height: 100%;
+  font-family: 'Hanuman', 'Helvetica', sans-serif !important;
+
+  #content-wrapper {
+    min-height: 70%;
+    position: relative;
+    @include margin(20px null null null);
+  }
+}

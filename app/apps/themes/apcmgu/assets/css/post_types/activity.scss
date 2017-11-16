@@ -1,0 +1,10 @@
+@import 'bourbon';
+@import '../helpers/_variable';
+
+section#activity {
+  .description {
+    img {
+      max-width: 200px;
+    }
+  }
+}
