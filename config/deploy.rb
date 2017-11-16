@@ -1,7 +1,7 @@
 lock "3.10.0"
 
-set :application, 'oscar-website'
-set :repo_url, "git@github.com:rotati/#{fetch(:application)}.git"
+set :application, 'ccma-website'
+set :repo_url, "git@github.com:SopharyMSH/ccma-website.git"
 
 if ENV['CISERVER']
   set :branch, `git rev-parse --abbrev-ref HEAD`.chomp
