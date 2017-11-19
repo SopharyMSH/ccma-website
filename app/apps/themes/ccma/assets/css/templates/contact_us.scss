@@ -1,0 +1,22 @@
+@import 'bourbon';
+@import '../helpers/_variable';
+
+.title {
+  font-weight: 600px;
+}
+.dot-border {
+  height: 2px;
+  border-width: 5px;
+  border-top-style: dotted;
+  border-color: #ffffff;
+  // border-color: $apcmgu-color;
+  @include margin(30px null);
+}
+section#contact_us {
+  color: #ffffff;
+  padding-bottom: 20px;
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+}

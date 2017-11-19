@@ -1,0 +1,18 @@
+%section#activities
+  .container
+    .row
+      .col-xs-12.text-center
+        %h4.title
+          = current_site.the_post_type('activities').the_title
+    .row.grid
+      - current_site.the_post_type('activities').the_posts.visible_frontend.decorate.each do |activity|
+        .col-xs-12.col-sm-4.grid-item.apcmgu-card
+          .card
+            .card-image
+              = image_tag activity.the_field('image-introduction'), class: 'img-responsive dcc-news-img'
+            .card-title.text-center
+              = link_to truncate(activity.the_title, length: 100, separator: ' '), activity.the_url
+            .card-content
+              = truncate("#{strip_tags(activity.the_content)}...", length: 300)
+            .card-action
+              = link_to apcmgu_translation('អានបន្ថែម', 'Read More', '更多'), activity.the_url
