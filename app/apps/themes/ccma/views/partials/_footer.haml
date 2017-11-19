@@ -1,0 +1,18 @@
+%section#footer
+  .container
+    .row
+      .col-xs-12
+        %a#back-to-top.btn.btn-ccca.back-to-top{  data: { placement: 'left', toggle: 'tooltip' }, href: 'javascript:void(0)', role: 'button', title: 'Click to return on the top page' }
+          = fa_icon 'chevron-up'
+      .col-xs-12
+        .government-logo
+          = image_tag current_theme.the_field('apcmgu-logo'), class: 'img-responsive'
+      .col-xs-12
+        .more-information.text-center
+          .address
+            = current_theme.the_field('address')
+          .copy-right
+            - if I18n.locale == :en
+              Copyright© Cambodia Chinese Medical Association . All Rights Reserved.
+            - else
+              រក្សាសិទ្ធិគ្រប់យ៉ាងដោយ © សមាគមន៍វេជ្ជសាស្ត្រកម្ពុជា-ចិន

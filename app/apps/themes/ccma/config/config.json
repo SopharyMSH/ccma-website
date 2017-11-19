@@ -1,0 +1,15 @@
+{
+  "name" : "Ccma",
+  "description" : "",
+  "thumb" : "images/image.png",
+  "helpers": [
+    "Themes::Ccma::MainHelper",
+    "Themes::Ccma::LanguageHelper"
+  ],
+  "hooks": {
+    "on_active": ["ccma_on_install_theme"],
+    "on_inactive": ["ccma_on_uninstall_theme"],
+    "on_theme_settings": ["ccma_settings"]
+    //here all your hooks
+  }
+}
