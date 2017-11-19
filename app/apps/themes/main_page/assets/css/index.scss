@@ -1,0 +1,36 @@
+@import 'bourbon';
+
+section#main-page {
+  .apcmgu, .ccma {
+    background: none repeat scroll 0 0 #ffffff;
+    border-radius: 10px;
+    min-height: 512px;
+    position: relative;
+    margin-top: 30%;
+    img {
+      bottom: 0;
+      display: block;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-height: 250px;
+    }
+    a {
+      @include transition(all 0.15s ease-in-out);
+      @include transform(scale(0.70));
+      &:hover {
+        @include transform(scale(0.90));
+      }
+      bottom: 0;
+      display: block;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-height: 115px;
+    }
+  }
+}

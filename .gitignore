@@ -28,3 +28,4 @@ app/apps/themes/.DS_Store
 .byebug_history
 
 .env
+public/*
