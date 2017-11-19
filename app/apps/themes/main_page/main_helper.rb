@@ -9,18 +9,24 @@ module Themes::MainPage::MainHelper
 
   # callback called after theme installed
   def main_page_on_install_theme(theme)
-    # # Sample Custom Field
-    # unless theme.get_field_groups.where(slug: "fields").any?
-    #   group = theme.add_field_group({name: "Main Settings", slug: "fields", description: ""})
-    #   group.add_field({"name"=>"Background color", "slug"=>"bg_color"},{field_key: "colorpicker"})
-    #   group.add_field({"name"=>"Links color", "slug"=>"links_color"},{field_key: "colorpicker"})
-    #   group.add_field({"name"=>"Background image", "slug"=>"bg"},{field_key: "image"})
-    # end
-
-    # # Sample Meta Value
-    # theme.set_meta("installed_at", Time.current.to_s) # save a custom value
+    main_add_customize_theme_setting(theme)
   end
 
+  def main_add_customize_theme_setting(theme)
+    if theme.get_field_groups.where(slug: 'theme-setting').blank?
+      group = theme.add_field_group({name: 'APCMGU', slug: 'apcmgu'})
+      group.add_field({ name: 'Apcmgu Logo', slug: 'apcmgu-logo' }, { field_key: 'image', require: true })
+      group.add_field({ name: 'Apcmgu Url', slug: 'apcmgu-url' }, { field_key: 'image', require: true })
+
+      group = theme.add_field_group({name: 'CCMA', slug: 'ccma'})
+      group.add_field({ name: 'Ccma Logo', slug: 'ccma-logo' }, { field_key: 'image', require: true })
+      group.add_field({ name: 'Ccma Url', slug: 'ccma-url' }, { field_key: 'image', require: true })
+    end
+  end
+
+  # callback executed after theme uninstalled
+  def ccma_on_uninstall_theme(theme)
+  end
   # callback executed after theme uninstalled
   def main_page_on_uninstall_theme(theme)
   end
