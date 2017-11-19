@@ -16,11 +16,11 @@ module Themes::MainPage::MainHelper
     if theme.get_field_groups.where(slug: 'theme-setting').blank?
       group = theme.add_field_group({name: 'APCMGU', slug: 'apcmgu'})
       group.add_field({ name: 'Apcmgu Logo', slug: 'apcmgu-logo' }, { field_key: 'image', require: true })
-      group.add_field({ name: 'Apcmgu Url', slug: 'apcmgu-url' }, { field_key: 'image', require: true })
+      group.add_field({ name: 'Apcmgu Url', slug: 'apcmgu-url' }, { field_key: 'url', require: true })
 
       group = theme.add_field_group({name: 'CCMA', slug: 'ccma'})
       group.add_field({ name: 'Ccma Logo', slug: 'ccma-logo' }, { field_key: 'image', require: true })
-      group.add_field({ name: 'Ccma Url', slug: 'ccma-url' }, { field_key: 'image', require: true })
+      group.add_field({ name: 'Ccma Url', slug: 'ccma-url' }, { field_key: 'url', require: true })
     end
   end
 
