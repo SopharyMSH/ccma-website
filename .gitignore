@@ -20,6 +20,11 @@
 /node_modules
 /yarn-error.log
 
+.DS_Store
+app/.DS_Store
+app/apps/.DS_Store
+app/apps/themes/.DS_Store
+
 .byebug_history
 
 .env

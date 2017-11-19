@@ -1,0 +1,35 @@
+%section#contact_us{style: "background: url('#{theme_asset_url('images/Blur-Background-Background-Pictures-Dslr-Camera-Blur-Background.jpg')}') center center"}
+  .container
+    .row
+      .col-xs-12.text-center
+        %h3.title
+          = @post.the_title
+        %p.phone
+          - if @post.get_fields('phone-number').any?
+            = fa_icon 'phone'
+            = @post.get_fields('phone-number').join(' / ')
+        %p.email
+          - if @post.get_field('email')
+            = fa_icon 'envelope'
+            = mail_to @post.get_field('email'), @post.get_field('email')
+        %p.address
+          = fa_icon 'map-marker'
+          = @post.the_field('address')
+      .col-xs-12
+        .dot-border
+    .row
+      .col-xs-12.col-sm-6
+        %iframe{ allowfullscreen: '', frameborder: '0', width: '100%', height: '350px', allowfullscreen: '', src: @post.the_field('embed-map-url')  }
+      .col-xs-12.col-sm-6
+        %h4
+          We are happy to answer any questions you may have
+        %form{:action => "https://formspree.io/t.sophary168@gmail.com", :method => "POST", id: 'form-contact'}
+          .form-group
+            %input#name.form-control{:name => "name", :placeholder => "Name"}
+          .form-group
+            %input#email.form-control{:name => "email", :placeholder => "Email"}
+          .form-group
+            %input#phone.form-control{:name => "phone", :placeholder => "Phone"}
+          .form-group
+            %textarea#message.form-control{:placeholder => "Message", :type => "text", :rows =>"4"}
+          %button.btn.btn-default{:type => "submit"} Send Message

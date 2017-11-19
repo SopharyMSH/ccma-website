@@ -1,0 +1,13 @@
+%section#certificate
+  .container
+    .row
+      .col-xs-12
+        .title.text-center
+          %h4
+            = @post.the_title
+        .certificate-image
+          = image_tag @post.the_field('image'), class: 'img-responsive'
+    .row
+      .col-xs-12
+        .content
+          = raw @post.the_content
