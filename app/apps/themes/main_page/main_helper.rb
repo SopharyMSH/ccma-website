@@ -21,6 +21,9 @@ module Themes::MainPage::MainHelper
       group = theme.add_field_group({name: 'CCMA', slug: 'ccma'})
       group.add_field({ name: 'Ccma Logo', slug: 'ccma-logo' }, { field_key: 'image', require: true })
       group.add_field({ name: 'Ccma Url', slug: 'ccma-url' }, { field_key: 'url', require: true })
+
+      group = theme.add_field_group({name: 'Main Background', slug: 'main-background'})
+      group.add_field({ name: 'Background-image', slug: 'background-image' }, { field_key: 'image' })
     end
   end
 

@@ -8,7 +8,7 @@
     = stylesheet_link_tag theme_asset_path("css/main")
     = javascript_include_tag theme_asset_path("js/main.js")
     = raw the_head
-  %body{style: "background-image: url('https://static1.squarespace.com/static/530e8d24e4b04fb5b2cdcbf1/t/59c3fe51cf81e0567c712be0/1506016856069/bokeh_blur_nature_1000px.jpg'); background-size: cover"}
+  %body{style: "background-image: url('#{current_theme.the_field('background-image')}'); background-size: cover"}
     #content-wrapper
       = yield
     
