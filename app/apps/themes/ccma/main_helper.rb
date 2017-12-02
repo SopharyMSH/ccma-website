@@ -15,7 +15,6 @@ module Themes::Ccma::MainHelper
     ccma_add_certificates_post_type
     ccma_add_activities_post_type
     ccma_add_fields_to_contact_us_page
-    ccma_add_fields_to_about_page
 
   end
 
@@ -64,53 +63,6 @@ module Themes::Ccma::MainHelper
         end
       end
     end
-  end
-
-  def ccma_add_fields_to_about_page
-    page = current_site.the_post_type('page').the_post('about')
-    if page.get_field_groups.where(slug: 'director-fields').blank?
-      file_field_group = page.add_field_group({ name: 'Director Fields', slug: 'director-fields' }, 'Post')
-      file_field_group.add_field({ name: 'Director Name', slug: 'director-name' },  { field_key: 'text_box', translate: true, required: true })
-      file_field_group.add_field({ name: 'Director Image', slug: 'director-image'}, { field_key: 'image', required: true})
-      file_field_group.add_field({ name: 'Director Title', slug: 'director-title'}, { field_key: 'text_box',translate: true, required: true})
-    end
-    if page.get_field_groups.where(slug: 'first-voice-director-fields').blank?
-      file_field_group = page.add_field_group({ name: 'Voice-director Fields', slug: 'first-voice-director-fields' }, 'Post')
-      file_field_group.add_field({ name: 'First Voice-director Name', slug: 'first-voice-director-name' },  { field_key: 'text_box', translate: true, required: true })
-      file_field_group.add_field({ name: 'First Voice-director Image', slug: 'first-voice-director-image'}, { field_key: 'image', required: true})
-      file_field_group.add_field({ name: 'First Voice-director Title', slug: 'first-voice-director-title'}, { field_key: 'text_box',translate: true, required: true})
-    end
-    if page.get_field_groups.where(slug: 'second-voice-director-fields').blank?
-      file_field_group = page.add_field_group({ name: 'Voice-director Fields', slug: 'second-voice-director-fields' }, 'Post')
-      file_field_group.add_field({ name: 'Second Voice-director Name', slug: 'second-voice-director-name' },  { field_key: 'text_box', translate: true, required: true })
-      file_field_group.add_field({ name: 'Second Voice-director Image', slug: 'second-voice-director-image'}, { field_key: 'image', required: true})
-      file_field_group.add_field({ name: 'Second Voice-director Title', slug: 'second-voice-director-title'}, { field_key: 'text_box',translate: true, required: true})
-    end
-    if page.get_field_groups.where(slug: 'third-voice-director-fields').blank?
-      file_field_group = page.add_field_group({ name: 'Voice-director Fields', slug: 'third-voice-director-fields' }, 'Post')
-      file_field_group.add_field({ name: 'Third Voice-director Name', slug: 'third-voice-director-name' },  { field_key: 'text_box', translate: true, required: true })
-      file_field_group.add_field({ name: 'Third Voice-director Image', slug: 'third-voice-director-image'}, { field_key: 'image', required: true})
-      file_field_group.add_field({ name: 'Third Voice-director Title', slug: 'third-voice-director-title'}, { field_key: 'text_box',translate: true, required: true})
-    end
-    if page.get_field_groups.where(slug: 'admin-fields').blank?
-      file_field_group = page.add_field_group({ name: 'Admin Fields', slug: 'admin-fields' }, 'Post')
-      file_field_group.add_field({ name: 'Admin Name', slug: 'admin-name' },  { field_key: 'text_box', translate: true, required: true })
-      file_field_group.add_field({ name: 'Admin Image', slug: 'admin-image'}, { field_key: 'image', required: true})
-      file_field_group.add_field({ name: 'Admin Title', slug: 'admin-title'}, { field_key: 'text_box',translate: true, required: true})
-    end
-    if page.get_field_groups.where(slug: 'the-finance-fields').blank?
-      file_field_group = page.add_field_group({ name: 'The finance fields', slug: 'the-finance-fields' }, 'Post')
-      file_field_group.add_field({ name: 'The finance Name', slug: 'the-finance-name' },  { field_key: 'text_box', translate: true, required: true })
-      file_field_group.add_field({ name: 'The finance Image', slug: 'the-finance-image'}, { field_key: 'image', required: true})
-      file_field_group.add_field({ name: 'The finance Title', slug: 'the-finance-title'}, { field_key: 'text_box',translate: true, required: true})
-    end
-    if page.get_field_groups.where(slug: 'the-program-preparing-fields').blank?
-      file_field_group = page.add_field_group({ name: 'The program preparing Fields', slug: 'the-program-preparing-fields' }, 'Post')
-      file_field_group.add_field({ name: 'The program preparing Name', slug: 'the-program-preparing-name' },  { field_key: 'text_box', translate: true, required: true })
-      file_field_group.add_field({ name: 'The program preparing Image', slug: 'the-program-preparing-image'}, { field_key: 'image', required: true})
-      file_field_group.add_field({ name: 'The program preparing Title', slug: 'the-program-preparing-title'}, { field_key: 'text_box',translate: true, required: true})
-    end
-
   end
 
   def ccma_add_fields_to_contact_us_page

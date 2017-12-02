@@ -13,20 +13,6 @@
         .item.slide-item
           = image_tag(slide.the_field('slide-image'))
           %span.slide-description= slide.the_field('description')
-  -# static
-  -# .carousel-inner{ role: 'listbox' }
-  -#   .item.active.slide-item
-  -#     = image_tag theme_asset_url('images/slides/sl1.jpg')
-  -#     %span.slide-description
-  -#       Welcome to Asia Pacific Chinese Medical Global Union!
-  -#   .item.slide-item
-  -#     = image_tag theme_asset_url('images/slides/sl2.jpg')
-  -#     %span.slide-description
-  -#       Welcome to Asia Pacific Chinese Medical Global Union!
-  -#   .item.slide-item
-  -#     = image_tag theme_asset_url('images/slides/sl3.jpg')
-  -#     %span.slide-description
-  -#       Welcome to Asia Pacific Chinese Medical Global Union!
 
   = link_to '#home-slide-container', class: 'left carousel-control', role: 'button', data: { slide: 'prev' } do
     %span.glyphicon.glyphicon-chevron-left
