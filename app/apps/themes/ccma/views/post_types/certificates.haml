@@ -1,0 +1,17 @@
+%section#certificate
+  .title
+    %p.text-center.text-uppercase
+      = current_site.the_post_type('certificates').the_title
+  .container
+    .row.grid
+      - current_site.the_post_type('certificates').the_posts.visible_frontend.decorate.each do |certificate|
+        .col-xs-12.col-sm-6.grid-item.apcmgu-card
+          .card
+            .card-image
+              = image_tag certificate.the_field('image'), class: 'img-responsive dcc-news-img'
+            .card-title.text-center
+              = link_to truncate(certificate.the_title, length: 100, separator: ' '), certificate.the_url
+            .card-content
+              = truncate("#{strip_tags(certificate.the_content)}...", length: 300, separator: ' ')
+            .card-action
+              = link_to apcmgu_translation('អានបន្ថែម', 'Read More', '更多'), certificate.the_url
