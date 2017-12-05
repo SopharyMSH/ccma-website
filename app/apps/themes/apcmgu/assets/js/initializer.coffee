@@ -1,23 +1,23 @@
-APCMGU.Initializer =
+Apcmgu.Initializer =
   exec: (pageName) ->
-    if pageName && APCMGU[pageName]
-      APCMGU[pageName]['init']()
+    if pageName && Apcmgu[pageName]
+      Apcmgu[pageName]['init']()
 
   currentPage: ->
     return '' unless $('#content-wrapper > section').attr('id')
+
     sectionId   = $('#content-wrapper > section').attr('id').split('-')
-    sectionIdConcated = ''
-
-    $.each sectionId, (index, value) ->
-      sectionIdSplitted = APCMGU.Util.capitalize(value)
-      sectionIdConcated = "#{sectionIdConcated}#{sectionIdSplitted}"
-
-    sectionIdConcated
+    prefix  = Apcmgu.Util.capitalize(sectionId[0])
+    if sectionId[1]
+      suffix  = Apcmgu.Util.capitalize(sectionId[1])
+      prefix + suffix
+    else
+      prefix
 
   init: ->
-    APCMGU.Initializer.exec('Common')
+    Apcmgu.Initializer.exec('Common')
     if @currentPage()
-      APCMGU.Initializer.exec(@currentPage())
+      Apcmgu.Initializer.exec(@currentPage())
 
 $(document).on 'ready page:load', ->
-  APCMGU.Initializer.init()
+  Apcmgu.Initializer.init()

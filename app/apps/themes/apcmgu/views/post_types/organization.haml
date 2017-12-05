@@ -1,0 +1,40 @@
+%section#organization
+  - organization_list = current_site.the_post_type('organization')
+  .organization-introduction
+    .container
+      .row
+        .col-xs-12
+          %h2.text-center= organization_list.the_title
+          .text-justify.organization-introduction-content
+            = raw organization_list.the_content
+  .organization-list
+    .container
+      - organization_list.the_posts.visible_frontend.decorate.each do |organization|
+        .row.each-organization-list-row
+          .col-xs-12.col-sm-3
+            = image_tag organization.get_field('organization-image'), class: 'img-responsive organization-image'
+  //         .col-xs-12.col-sm-9
+  //           %h3= organization.the_title
+  //           %p.organization-position= organization.get_field('organization-position')
+  //           .organization-background
+  //             = raw organization.the_content
+  //           .organization-social-network
+  //             %ul
+  //               - if organization.get_field('twitter-profile-link')
+  //                 %li
+  //                   = link_to organization.get_field('twitter-profile-link'), target: '_blank' do
+  //                     = fa_icon 'twitter'
+  //               - if organization.get_field('github-profile-link')
+  //                 %li
+  //                   = link_to organization.get_field('github-profile-link'), target: '_blank' do
+  //                     = fa_icon 'github'
+  //               - if organization.get_field('linked-in-profile-link')
+  //                 %li
+  //                   = link_to organization.get_field('linked-in-profile-link'), target: '_blank' do
+  //                     = fa_icon 'linkedin'
+  //       .each-organization-list-border
+  // .get-in-touch
+  //   .container
+  //     .row
+  //       .col-xs-12.text-center
+  //         %h3= @post.the_field('get-in-touch-content'

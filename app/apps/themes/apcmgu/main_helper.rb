@@ -11,10 +11,11 @@ module Themes::Apcmgu::MainHelper
   def apcmgu_on_install_theme(theme)
     apcmgu_add_customize_theme_setting(theme)
     apcmgu_add_default_pages
+    apcmgu_add_fields_to_contact_us_page
     apcmgu_add_slider_post_type
     apcmgu_add_certificates_post_type
     apcmgu_add_activities_post_type
-    apcmgu_add_fields_to_contact_us_page
+    apcmgu_add_organization_post_type
 
   end
 
@@ -138,10 +139,33 @@ module Themes::Apcmgu::MainHelper
         contents_route_format: 'post_of_posttype'
       }
       activities.set_meta('_default', options)
-      if activities.get_field_groups.where(slug: 'Activities field').blank?
+      if activities.get_field_groups.where(slug: 'activities-field').blank?
         activities_field_group = activities.add_field_group({ name: 'Activities field', slug: 'activities-field' } )
 
         activities_field_group.add_field({ name: 'Image Introduction', slug: 'image-introduction' }, { field_key: 'image', required: true } )
+      end
+    end
+  end
+
+  def apcmgu_add_organization_post_type
+    if current_site.the_post_type('organization').blank?
+      organization = current_site.post_types.create(name: 'Organization', slug: 'organization')
+      options = {
+        has_category: false,
+        has_content: false,
+        has_tags: false,
+        has_summary: false,
+        has_comments: false,
+        has_picture: false,
+        has_template: false,
+        has_keywords: false,
+        contents_route_format: 'post_of_posttype'
+      }
+      organization.set_meta('_default', options)
+      if organization.get_field_groups.where(slug: 'organization-field').blank?
+        organization_field_group = organization.add_field_group({ name: 'Organization field', slug: 'organization-field' } )
+
+        organization_field_group.add_field({ name: 'Organization Image', slug: 'organization-image' }, { field_key: 'image', required: true } )
       end
     end
   end

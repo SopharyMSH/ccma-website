@@ -1,4 +1,4 @@
-APCMGU.Common = do ->
+Apcmgu.Common = do ->
   _init = ->
     _navbarToggle()
     _scrollToTop()

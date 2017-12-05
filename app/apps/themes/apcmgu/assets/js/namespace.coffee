@@ -1,1 +1,1 @@
-window.APCMGU={};
+window.Apcmgu={};
