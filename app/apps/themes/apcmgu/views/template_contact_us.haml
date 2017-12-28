@@ -23,7 +23,7 @@
       .col-xs-12.col-sm-6
         %h4
           We are happy to answer any questions you may have
-        %form{:action => "https://formspree.io/t.sophary168@gmail.com", :method => "POST", id: 'form-contact'}
+        %form{:action => "https://formspree.io/#{@post.the_field('email')}", :method => "POST", id: 'form-contact'}
           .form-group
             %input#name.form-control{:name => "name", :placeholder => "Name"}
           .form-group
