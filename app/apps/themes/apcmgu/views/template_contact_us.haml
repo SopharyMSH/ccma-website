@@ -1,4 +1,4 @@
-%section#contact_us{style: "background: url('#{theme_asset_url('images/Blur-Background-Background-Pictures-Dslr-Camera-Blur-Background.jpg')}') center center"}
+%section#contact{style: "background: url('#{theme_asset_url('images/Blur-Background-Background-Pictures-Dslr-Camera-Blur-Background.jpg')}') center center"}
   .container
     .row
       .col-xs-12.text-center
@@ -23,13 +23,14 @@
       .col-xs-12.col-sm-6
         %h4
           We are happy to answer any questions you may have
-        %form{:action => "https://formspree.io/#{@post.the_field('email')}", :method => "POST", id: 'form-contact'}
+        %form{ action: "https://formspree.io/#{@post.the_field('email')}", method: "post", id: 'form-contact' }
           .form-group
-            %input#name.form-control{:name => "name", :placeholder => "Name"}
+            %input.form-control{ name: 'name', type: 'text', placeholder: 'Name', id: 'name', required: true}
           .form-group
-            %input#email.form-control{:name => "email", :placeholder => "Email"}
+            %input.form-control{ name: 'phone', type: 'tel', placeholder: 'Phone', id: 'phone', value: '', required: true}
           .form-group
-            %input#phone.form-control{:name => "phone", :placeholder => "Phone"}
+            %input.form-control{ name: 'email', type: 'email', type: 'email', placeholder: 'Email', id: 'email', required: true}
           .form-group
-            %textarea#message.form-control{:placeholder => "Message", :type => "text", :rows =>"4"}
-          %button.btn.btn-default{:type => "submit"} Send Message
+            %textarea.form-control{ name: 'message', type: 'text-area', placeholder: 'Message', id: 'message', rows: '5', text: 'Message', required: true}
+          %button.btn.btn-default.send{ type: 'submit' } Send Message
+      

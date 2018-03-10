@@ -5,4 +5,6 @@
 #= require ./common
 #= require ./util
 
+#= require ./contact
+
 #= require ./initializer
