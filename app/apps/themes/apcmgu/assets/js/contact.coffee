@@ -1,6 +1,6 @@
 APCMGU.Contact = do ->
   _init = ->
-    _contactForm()
+    # _contactForm()
     
   _contactForm = ->     
     $form = $('#form-contact')
